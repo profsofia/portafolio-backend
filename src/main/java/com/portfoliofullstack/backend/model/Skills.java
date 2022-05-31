@@ -14,11 +14,13 @@ public class Skills {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_skill;
     private String skill;
+    private String imgSkill;
 
     public Skills() {
     }
 
-    public Skills(String skill) {
+    public Skills(String skill, String imgSkill) {
         this.skill = skill;
+        this.imgSkill = imgSkill;
     }
 }

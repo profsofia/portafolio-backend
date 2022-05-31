@@ -15,13 +15,18 @@ public class Practices {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_practices;
-    private String practica;
+    private String practicaNombre;
+    private String tecnologia;
+    private String imagenPractica;
+    private String url;
 
     public Practices() {
     }
 
-    public Practices(String practica) {
-        this.practica = practica;
+    public Practices(String practicaNombre, String tecnologia, String imagenPractica, String url) {
+        this.practicaNombre = practicaNombre;
+        this.tecnologia = tecnologia;
+        this.imagenPractica = imagenPractica;
+        this.url = url;
     }
-
 }

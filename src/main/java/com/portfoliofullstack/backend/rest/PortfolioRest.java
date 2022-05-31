@@ -29,7 +29,7 @@ public class PortfolioRest {
     public ResponseEntity <Portfolio> actualizar(@PathVariable Long id, @RequestBody Portfolio editPortfolio){
         Portfolio portfolio = portfolioRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("No se encontró lo que buscabas"));
         portfolio.setNombre(editPortfolio.getNombre());
-        portfolio.setImgagenBanner(editPortfolio.getImgagenBanner());
+        portfolio.setImagenBanner(editPortfolio.getImagenBanner());
         portfolio.setImagenPerfil(editPortfolio.getImagenPerfil());
         portfolio.setNombre(editPortfolio.getNombre());
         portfolio.setDescripcion(editPortfolio.getDescripcion());

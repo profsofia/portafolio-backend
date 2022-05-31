@@ -28,7 +28,10 @@ public class PracticesRest {
     @PutMapping("/practices/{id}")
     public ResponseEntity <Practices> actualizarPractices(@PathVariable Long id, @RequestBody Practices editPractices){
         Practices practices = practicesRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("No se encontró la practica que buscabas"));
-        practices.setPractica(editPractices.getPractica());
+        practices.setPracticaNombre(editPractices.getPracticaNombre());
+        practices.setTecnologia(editPractices.getTecnologia());
+        practices.setImagenPractica(editPractices.getImagenPractica());
+        practices.setUrl(editPractices.getUrl());
         Practices practicaActualizada = practicesRepository.save(practices);
         return ResponseEntity.ok(practicaActualizada);
     }
