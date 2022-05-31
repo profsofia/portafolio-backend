@@ -28,12 +28,11 @@ public class PortfolioRest {
     @PutMapping("/portafolio/{id}")
     public ResponseEntity <Portfolio> actualizar(@PathVariable Long id, @RequestBody Portfolio editPortfolio){
         Portfolio portfolio = portfolioRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("No se encontró lo que buscabas"));
-        //portfolio.setId(editPortfolio.getId());
-        portfolio.setImagen(editPortfolio.getImagen());
         portfolio.setNombre(editPortfolio.getNombre());
-        portfolio.setProyectos(editPortfolio.getProyectos());
-        portfolio.setSkills(editPortfolio.getSkills());
-        portfolio.setTitulo(editPortfolio.getTitulo());
+        portfolio.setImgagenBanner(editPortfolio.getImgagenBanner());
+        portfolio.setImagenPerfil(editPortfolio.getImagenPerfil());
+        portfolio.setNombre(editPortfolio.getNombre());
+        portfolio.setDescripcion(editPortfolio.getDescripcion());
         Portfolio portfolioActualizado = portfolioRepository.save(portfolio);
         return ResponseEntity.ok(portfolioActualizado);
     }

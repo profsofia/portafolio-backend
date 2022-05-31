@@ -11,21 +11,17 @@ public class Portfolio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String imagen;
+    private String imgagenBanner;
+    private String imagenPerfil;
     private String nombre;
-    private String titulo;
-    private String skills;
-    private String proyectos;
-
+    private String descripcion;
     public Portfolio() {
     }
 
-    public Portfolio(String imagen,String nombre, String titulo, String skills, String proyectos) {
-        this.imagen = imagen;
+    public Portfolio(String imgagenBanner, String imagenPerfil, String nombre, String descripcion) {
+        this.imgagenBanner = imgagenBanner;
+        this.imagenPerfil = imagenPerfil;
         this.nombre = nombre;
-        this.titulo = titulo;
-        this.skills = skills;
-        this.proyectos = proyectos;
+        this.descripcion = descripcion;
     }
 }
