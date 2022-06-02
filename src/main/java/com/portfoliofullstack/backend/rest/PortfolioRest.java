@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "https://portofiofullstack.web.app")
 public class PortfolioRest {
     @Autowired
     private PortfolioRepository portfolioRepository;
